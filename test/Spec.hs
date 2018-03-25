@@ -66,12 +66,12 @@ spec = do
           (ofoldMap f a :: String) ==
           (ofoldMap f $ listToTrans a)
     describe "ofoldr" $ do
-      prop "is equivalent to list" $
+      modifyMaxSize (const 20) $ prop "is equivalent to list" $
         \f (a :: String) (mono :: [Int]) ->
           (ofoldr (applyFun2 f) a mono) ==
           (ofoldr (applyFun2 f) a $ listToTrans mono)
     describe "ofoldl'" $ do
-      prop "is equivalent to list" $
+      modifyMaxSize (const 20) $ prop "is equivalent to list" $
         \f (a :: String) (mono :: [Int]) ->
           (ofoldl' (applyFun2 f) a mono) ==
           (ofoldl' (applyFun2 f) a $ listToTrans mono)
@@ -130,7 +130,7 @@ spec = do
           (ofor_ mono (f :: Int -> Maybe ())) ==
           (ofor_ (listToTrans mono) f)
     describe "ofoldlM" $ do
-      prop "is equivalent to list" $
+      modifyMaxSize (const 40) $ prop "is equivalent to list" $
         \f (a :: String) (mono :: [Int]) ->
           (ofoldlM (applyFun2 f) a mono :: Maybe String) ==
           (ofoldlM (applyFun2 f) a (listToTrans mono))
