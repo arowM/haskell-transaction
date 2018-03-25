@@ -320,6 +320,7 @@ action a = TVal a $ pure ()
  -   Converters
  - ============== -}
 {- | An alias of 'first' for convenience.
+
 >>> :{
 toList $ do
   action 4
@@ -338,6 +339,7 @@ tFilter "Use `IsSequence.filter` instead."
  #-}
 
 {- | An alias of 'filter'.
+
 >>> :{
 toList $ do
   action 4
@@ -347,6 +349,17 @@ toList $ do
   action 7
 :}
 [4,6,7]
+
+>>> :{
+toList $ do
+  action 4
+  filter even $ do
+    action 5
+    action 6
+  action 7
+:}
+[4,6,7]
+
 -}
 tFilter :: (a -> Bool) -> Transaction a -> Transaction a
 tFilter = filter
