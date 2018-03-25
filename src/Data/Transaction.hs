@@ -386,7 +386,7 @@ tFilterMap f (TVal a next) =
     Nothing -> tFilterMap f next
 tFilterMap _ (TNull ()) = TNull ()
 
-{- | An alias of `foldl` for convenience.
+{- | An alias of 'foldl' for convenience.
 -}
 reduce :: (b -> a -> b) -> b -> Transaction a -> b
 reduce = foldl
