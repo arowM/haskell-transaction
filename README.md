@@ -6,3 +6,4 @@
 # Haskell-transaction
 
 Monadic representation of transactions.
+Alike `List`, but can be declared with `do` notations.

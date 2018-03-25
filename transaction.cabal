@@ -2,7 +2,7 @@ name:                transaction
 version:             0.1.0.0
 synopsis:            Monadic representation of transactions.
 description:
-    Monadic representation of transactions.
+    Monadic representation of transactions. Alike `List`, but can be declared with `do` notations.
 homepage:            https://github.com/arowM/haskell-transaction#readme
 license:             MIT
 license-file:        LICENSE
