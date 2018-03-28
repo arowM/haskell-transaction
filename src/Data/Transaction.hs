@@ -157,7 +157,7 @@ foldl1' :: (a -> a -> a) -> Transaction a -> a
 foldl1' _ (TNull ()) = error "Transaction.foldl1': empty transaction"
 foldl1' f (TVal a next) = foldl' f a next
 
-#if MIN_VERSION_base(4,11,0)
+#if MIN_VERSION_mono_traversable(1,0,2)
 {-# NOINLINE [1] length #-}
 length :: Transaction a -> Int
 length t = lenAcc t 0
