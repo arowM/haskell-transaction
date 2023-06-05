@@ -33,21 +33,15 @@ module Data.Transaction
   ) where
 
 import Prelude hiding
-  ( all
+  ( Foldable(..)
+  , all
   , any
   , drop
   , dropWhile
   , filter
-  , foldMap
-  , foldl
-  , foldl1
-  , foldr
-  , foldr1
   , head
   , init
   , last
-  , length
-  , null
   , repeat
   , replicate
   , span
