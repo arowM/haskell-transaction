@@ -1,5 +1,5 @@
 name:                transaction
-version:             0.1.1.3
+version:             0.1.1.4
 synopsis:            Monadic representation of transactions.
 description:
     Monadic representation of transactions. Alike `List`, but can be declared with `do` notations.
